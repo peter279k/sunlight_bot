@@ -2,9 +2,18 @@
 	require 'libs/LIB_http.php';
 	require 'libs/LIB_parse.php';
 	
+	//user input by command
+	iconv_set_encoding("internal_encoding", "UTF-8");
+	iconv_set_encoding("output_encoding", "big5");
+	
+	echo "請輸入斷字";
+	$handle = fopen("php://stdin", "r");
+	$input_str = fgets($handle);
+	$input_str = trim($input_str);
 	$action = "http://sunlight.iis.sinica.edu.tw/cgi-bin/text.cgi";
 	$data_arr = array();
-	$data_arr["query"] = iconv("utf-8", "big5","變態冠霖");
+	
+	$data_arr["query"] = iconv("utf-8", "big5", $input_str);
 	$result = http($action, $ref = "", $method = "POST", $data_arr, EXCL_HEAD);
 	$result_str = $result["FILE"];
 	$result_arr = parse_array($result_str, "<META ", ">");
