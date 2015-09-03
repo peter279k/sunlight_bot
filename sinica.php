@@ -3,7 +3,6 @@
 	require 'libs/LIB_parse.php';
 	
 	//user input by command
-	
 	echo iconv("utf-8", "big5", "請輸入斷字");
 	$handle = fopen("php://stdin", "r");
 	$input_str = fgets($handle);
