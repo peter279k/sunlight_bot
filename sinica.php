@@ -4,7 +4,7 @@
 	
 	$action = "http://sunlight.iis.sinica.edu.tw/cgi-bin/text.cgi";
 	$data_arr = array();
-	$data_arr["query"] = "變態冠霖";
+	$data_arr["query"] = iconv("utf-8", "big5","變態冠霖");
 	$result = http($action, $ref = "", $method = "POST", $data_arr, EXCL_HEAD);
 	$result_str = $result["FILE"];
 	$result_arr = parse_array($result_str, "<META ", ">");
