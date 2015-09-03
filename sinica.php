@@ -3,8 +3,6 @@
 	require 'libs/LIB_parse.php';
 	
 	//user input by command
-	iconv_set_encoding("internal_encoding", "UTF-8");
-	iconv_set_encoding("output_encoding", "big5");
 	
 	echo "請輸入斷字";
 	$handle = fopen("php://stdin", "r");
