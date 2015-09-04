@@ -3,7 +3,7 @@
 ## Usage
 If you have php5-cli, open terminal or cmd.exe and input the command : 
 
-```PHP
+```bash
 php your-path/sinica.php
 ```
 
