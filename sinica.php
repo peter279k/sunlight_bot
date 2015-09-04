@@ -36,10 +36,14 @@
 	{
 		$temp_str = return_between($response_link[$count], "<a>", "</a>", EXCL);
 		$temp_str = explode(">", $temp_str);
-		//$temp_link = get_attribute($temp_str[0], "HREF");
+		$link = "http://sunlight.iis.sinica.edu.tw/" . get_attribute(str_replace($search_arr, '"', $response_link2[$count]), "HREF");
+		$web_page = http_get($link, $ref = "");
+		$web_page = $web_page["FILE"];
+		$plain_text = return_between($web_page, "<pre>", "</pre>", EXCL);
+		
 		if(stristr($detect_os, "WIN"))
-			echo "\n" . iconv("utf-8", "big5", $temp_str[1]) . ": " . "http://sunlight.iis.sinica.edu.tw/" . get_attribute(str_replace($search_arr, '"', $response_link2[$count]), "HREF") . "\n";
+			echo "\n" . iconv("utf-8", "big5", $temp_str[1]) . ": " . $plain_text . "\n";
 		else
-			echo "\n" . "utf-8", "big5", $temp_str[1] . ": " . "http://sunlight.iis.sinica.edu.tw/" . get_attribute(str_replace($search_arr, '"', $response_link2[$count]), "HREF") . "\n";
+			echo "\n" . "utf-8", "big5", $temp_str[1] . ": " . $plain_text . "\n";
 	}
 ?>
