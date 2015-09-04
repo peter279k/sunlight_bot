@@ -40,7 +40,7 @@
 		$web_page = http_get($link, $ref = "");
 		$web_page = $web_page["FILE"];
 		$plain_text = return_between($web_page, "<pre>", "</pre>", EXCL);
-		
+		$plain_text = str_replace("-", "", trim($plain_text));
 		if(stristr($detect_os, "WIN"))
 			echo "\n" . iconv("utf-8", "big5", $temp_str[1]) . ": " . $plain_text . "\n";
 		else
