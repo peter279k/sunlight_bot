@@ -1,6 +1,6 @@
 # sunlight_bot
 ### 中研院斷詞處理機器人
-### 中研院斷瓷系統[網址](http://sunlight.iis.sinica.edu.tw/uwextract/demo.htm)
+### 中研院斷詞系統[網址](http://sunlight.iis.sinica.edu.tw/uwextract/demo.htm)
 ### 系統執行環境
 Linux(建議), Windows
 ## Usage
