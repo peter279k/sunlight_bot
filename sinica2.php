@@ -1,10 +1,9 @@
 <?php
 	require 'libs/LIB_http.php';
 	require 'libs/LIB_parse.php';
+	require 'libs/opencc.php';
 	
-	//user input by command
-	$detect_os = PHP_OS;
-	$handle = file_get_contents("input.txt");
+	$handle = opecc_convert("input.txt");
 	$input_str = iconv("utf-8", "big5", $handle);
 	$input_str = trim($input_str);
 	$action = "http://sunlight.iis.sinica.edu.tw/cgi-bin/text.cgi";
@@ -37,9 +36,7 @@
 		$web_page = $web_page["FILE"];
 		$plain_text = return_between($web_page, "<pre>", "</pre>", EXCL);
 		$plain_text = str_replace("-", "", trim($plain_text));
-		if(stristr($detect_os, "WIN"))
-			echo "\n" . iconv("utf-8", "big5", $temp_str[1]) . ": " . $plain_text . "\n";
-		else
-			echo "\n" . "utf-8", "big5", $temp_str[1] . ": " . $plain_text . "\n";
+		echo "\n" . $plain_text . "\n";
+		echo "\n" . $plain_text . "\n";
 	}
 ?>
