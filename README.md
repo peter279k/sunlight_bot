@@ -18,3 +18,11 @@ sample text : input.txt, 預設編碼: utf-8
 ```bash
 php your-path/sinica2.php
 ```
+
+### Dependencies
+
+需要使用opencc 套件，此套件只能在Linux下執行，測試環境為: Linux/Ubuntu
+
+### opencc 套件安裝參考
+
+[參考網址](http://code.onnie.biz/2013/09/ubuntu-opencc-php.html)
