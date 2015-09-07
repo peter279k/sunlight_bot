@@ -1,8 +1,7 @@
 # sunlight_bot
 ### 中研院斷詞處理機器人
 ### 中研院斷詞系統[網址](http://sunlight.iis.sinica.edu.tw/uwextract/demo.htm)
-### 系統執行環境
-Linux(建議), Windows
+### 系統執行環境: Linux(建議), Windows
 ## Usage
 If you have php5-cli, open terminal or cmd.exe and input the command : 
 
@@ -32,8 +31,8 @@ php your-path/sinica2.php
 
 ### 目前遇到已知的問題
 
-utf-8的繁體與簡體文章夾雜，轉換成都是utf-8繁體之後再轉成big5繁體會出現無法預期的錯誤
+utf-8的繁體與簡體文章夾雜，轉換成都是utf-8繁體之後再轉成big5繁體會出現無法預期的錯誤，
 
-需轉成big5原因是因為中研院斷詞系統只支援big5碼，若用utf-8則會導致輸出斷詞結果為亂碼
+需轉成big5原因是因為中研院斷詞系統只支援big5碼，若用utf-8則會導致輸出斷詞結果為亂碼。
 
 斷詞系統無法對全型的標點符號和數字進行處理，解決方式是移除這些全型字元或是將其轉半形
